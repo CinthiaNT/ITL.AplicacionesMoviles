@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Strings</string>
+    <string name="lblNombre">Nombre</string>
+    <string name="lblEdad">Edad</string>
+    <string name="lblPuesto">Puesto</string>
+    <string name="txtNombre">Ingresa el nombre</string>
+    <string name="txtEdad">Ingresa la edad</string>
+    <string name="txtPuesto">Ingresa el puesto</string>
+</resources>
