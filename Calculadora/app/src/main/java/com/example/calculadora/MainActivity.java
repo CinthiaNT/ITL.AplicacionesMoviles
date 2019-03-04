@@ -19,6 +19,11 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        //--------------------Valores para pruebas------------------------------//
+        float numero1 = 5;
+        float numero2 = 6;
+        int operacion = 7;
+        float resul = operaciones_complejas(operacion,numero2);
 
         txt_pantalla = (EditText) findViewById(R.id.txt_pantalla);
         btn_0 = (Button) findViewById(R.id.btn_0);
@@ -31,7 +36,6 @@ public class MainActivity extends AppCompatActivity {
         btn_7 = (Button) findViewById(R.id.btn_7);
         btn_8 = (Button) findViewById(R.id.btn_8);
         btn_9 = (Button) findViewById(R.id.btn_9);
-
         btn_punto = (Button) findViewById(R.id.btn_punto);
         btn_eliminar = (Button) findViewById(R.id.btn_eliminar);
         btn_igual = (Button) findViewById(R.id.btn_igual);
@@ -137,19 +141,38 @@ public class MainActivity extends AppCompatActivity {
         toast.show();
     }
 
-    private String [] separarCadena(String cadena) {
-        String[] mascara = cadena.split("/");
-        String[] octetos = mascara[0].split("[.]");
-        String[] datos = new String[5];
-        System.arraycopy(octetos, 0, datos, 0, 4);
-        datos[4] = mascara[1];
-        for (int i = 0; i < datos.length; i++) {
-            System.out.println(datos[i]);
+    //--------------------METODOS PRIVADOS---------------------------------------//
+    private float operaciones_basicas(int operacion,float numero1, float numero2){
+        switch (operacion) {
+            case 1:
+                return numero1 + numero2;
+            case 2:
+                return numero1 - numero2;
+            case 3:
+                return numero1 * numero2;
+            case 4:
+                return numero1/numero2;
         }
-        return octetos;
+        return 0;
     }
-    private boolean validarRango(int numero, int limiteInferior, int limiteSuperior){
-        return numero >= limiteInferior && numero <= limiteSuperior;
+    private float operaciones_complejas(int operacion,float numero1){
+        switch (operacion){
+            case (5):
+                    return factorial(numero1);
+            case(6):
+                return (float)Math.sqrt((double)numero1);
+            case(7):
+                return (float)Math.pow((double)numero1,2);
+        }
+        return 0;
     }
+    private float factorial(float numero1){
+        if (numero1==0)
+            return 1;
+        else
+            return numero1 * factorial(numero1-1);
+    }
+
+
 
 }
