@@ -152,17 +152,17 @@ public class MainActivity extends AppCompatActivity {
                 return numero1 * numero2;
             case 4:
                 return numero1/numero2;
+            case(5):
+                return (float)Math.pow((double)numero1,(double)numero2);
         }
         return 0;
     }
     private float operaciones_complejas(int operacion,float numero1){
         switch (operacion){
-            case (5):
+            case (6):
                     return factorial(numero1);
-            case(6):
-                return (float)Math.sqrt((double)numero1);
             case(7):
-                return (float)Math.pow((double)numero1,2);
+                return (float)Math.sqrt((double)numero1);
         }
         return 0;
     }
