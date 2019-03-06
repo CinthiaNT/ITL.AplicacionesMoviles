@@ -8,11 +8,9 @@ public enum OperacionesBasicas {
     multiplicacion(3),
     resta(2),
     suma(1);
-    private final int valor;
-    OperacionesBasicas(int valor){
-        this.valor = valor;
-    }
-    public int getValor(){ return valor;}
+    private static int valor;
+    OperacionesBasicas(int valor){}
+    public static int getValor(){ return valor;}
 
 
 

@@ -5,27 +5,29 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
     private EditText txt_pantalla;
+    private TextView txt_resultado;
     private Button btn_0, btn_1, btn_2,btn_3,btn_4,btn_5,btn_6,btn_7, btn_8, btn_9,
             btn_punto, btn_eliminar, btn_igual, btn_clear, btn_mas, btn_menos, btn_multiplica,
             btn_division, btn_masDecimales, btn_menosDecimales, btn_save,btn_negativo,btn_potencia,btn_factorial,
-            btn_raizCuadrada;
+            btn_raizCuadrada,btn_porcentaje;
+    private int operacion;
+    private float numero1;
+    private float numero2;
+    private float resultado;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         //--------------------Valores para pruebas------------------------------//
-        float numero1 = 5;
-        float numero2 = 6;
-        int operacion = 7;
-        float resul = operaciones_complejas(operacion,numero2);
-
         txt_pantalla = (EditText) findViewById(R.id.txt_pantalla);
+        txt_resultado = (TextView) findViewById(R.id.txt_resultado);
         btn_0 = (Button) findViewById(R.id.btn_0);
         btn_1 = (Button) findViewById(R.id.btn_1);
         btn_2 = (Button) findViewById(R.id.btn_2);
@@ -38,6 +40,7 @@ public class MainActivity extends AppCompatActivity {
         btn_9 = (Button) findViewById(R.id.btn_9);
         btn_punto = (Button) findViewById(R.id.btn_punto);
         btn_eliminar = (Button) findViewById(R.id.btn_eliminar);
+        btn_porcentaje = (Button) findViewById(R.id.btn_porcentaje);
         btn_igual = (Button) findViewById(R.id.btn_igual);
         btn_clear = (Button) findViewById(R.id.btn_clear);
         btn_mas = (Button) findViewById(R.id.btn_mas);
@@ -51,12 +54,12 @@ public class MainActivity extends AppCompatActivity {
         btn_masDecimales = (Button) findViewById(R.id.btn_masDecimales);
         btn_menosDecimales = (Button) findViewById(R.id.btn_menosDecimales);
         btn_save = (Button) findViewById(R.id.btn_save);
-    }
 
+    }
     public void onClick(View view){
         switch (view.getId()){
             case R.id.btn_0:
-                txt_pantalla.setText(txt_pantalla.getText().toString());
+                txt_pantalla.setText(txt_pantalla.getText().toString()+"0");
                 break;
             case R.id.btn_1:
                 txt_pantalla.setText(txt_pantalla.getText().toString()+"1");
@@ -89,34 +92,69 @@ public class MainActivity extends AppCompatActivity {
                 txt_pantalla.setText(txt_pantalla.getText().toString()+".");
                 break;
             case R.id.btn_igual:
-                txt_pantalla.setText(txt_pantalla.getText().toString()+"=");
+                if(operacion >= 7){
+                    resultado=operaciones_complejas(operacion,numero1);
+                }else{
+                    numero2 = Float.parseFloat(txt_pantalla.getText().toString());
+                    resultado = operaciones_basicas(operacion,numero1,numero2);
+                }
+                txt_pantalla.setText("");
+                txt_pantalla.setText(txt_pantalla.getText().toString() + resultado);
+                txt_resultado.setText("");
                 break;
             case R.id.btn_clear:
-                //txtPantalla.setText(txtPantalla.get);
+                txt_pantalla.setText("");
                 break;
             case R.id.btn_mas:
-                txt_pantalla.setText(txt_pantalla.getText().toString()+"+");
+                operacion = 1;
+                numero1 = Float.parseFloat(txt_pantalla.getText().toString());
+                txt_resultado.setText(txt_pantalla.getText()+"+");
+                txt_pantalla.setText("");
                 break;
             case R.id.btn_menos:
-                txt_pantalla.setText(txt_pantalla.getText().toString()+"-");
+                operacion = 2;
+                numero1 = Float.parseFloat(txt_pantalla.getText().toString());
+                txt_resultado.setText(txt_pantalla.getText()+"-");
+                txt_pantalla.setText("");
                 break;
             case R.id.btn_multiplica:
-                txt_pantalla.setText(txt_pantalla.getText().toString()+"x");
+                operacion = 3;
+                numero1 = Float.parseFloat(txt_pantalla.getText().toString());
+                txt_resultado.setText(txt_pantalla.getText()+"x");
+                txt_pantalla.setText("");
                 break;
             case R.id.btn_division:
-                txt_pantalla.setText(txt_pantalla.getText().toString()+"/");
+                operacion = 4;
+                numero1 = Float.parseFloat(txt_pantalla.getText().toString());
+                txt_resultado.setText(txt_pantalla.getText()+"x");
+                txt_pantalla.setText("");
                 break;
             case R.id.btn_negativo:
                 txt_pantalla.setText(txt_pantalla.getText().toString()+"-");
                 break;
             case R.id.btn_raizCuadrada:
-                txt_pantalla.setText(txt_pantalla.getText().toString()+"√()");
+                operacion = 8;
+                numero1 = Float.parseFloat(txt_pantalla.getText().toString());
+                txt_resultado.setText(txt_pantalla.getText().toString()+"√("+numero1+")");
+                txt_pantalla.setText("");
                 break;
             case R.id.btn_potencia:
-                txt_pantalla.setText(txt_pantalla.getText().toString()+"sqr()");
+                operacion = 5;
+                numero1 = Float.parseFloat(txt_pantalla.getText().toString());
+                txt_resultado.setText(txt_pantalla.getText()+"^");
+                txt_pantalla.setText("");
+                break;
+            case R.id.btn_porcentaje:
+                operacion = 6;
+                numero1 = Float.parseFloat(txt_pantalla.getText().toString());
+                txt_resultado.setText(txt_pantalla.getText()+"%");
+                txt_pantalla.setText("");
                 break;
             case R.id.btn_factorial:
-                txt_pantalla.setText(txt_pantalla.getText().toString()+"fact()");
+                operacion = 7;
+                numero1 = Float.parseFloat(txt_pantalla.getText().toString());
+                txt_resultado.setText(txt_pantalla.getText().toString()+"fact("+numero1+")");
+                txt_pantalla.setText("");
                 break;
             case R.id.btn_eliminar:
                 alerta("Elimino el  ultimo caracter");
@@ -143,28 +181,39 @@ public class MainActivity extends AppCompatActivity {
 
     //--------------------METODOS PRIVADOS---------------------------------------//
     private float operaciones_basicas(int operacion,float numero1, float numero2){
+        Float resul = 0f;
         switch (operacion) {
             case 1:
-                return numero1 + numero2;
+                resul = numero1 + numero2;
+                break;
             case 2:
-                return numero1 - numero2;
+                resul = numero1 - numero2;
+                break;
             case 3:
-                return numero1 * numero2;
+                resul = numero1 * numero2;
+                break;
             case 4:
-                return numero1/numero2;
-            case(5):
-                return (float)Math.pow((double)numero1,(double)numero2);
+                resul = numero1/numero2;
+                break;
+            case 5:
+                resul = (float)Math.pow((double)numero1,(double)numero2);
+                break;
+            case 6:
+                resul = (numero1 * numero2)/100;
         }
-        return 0;
+        return resul;
     }
     private float operaciones_complejas(int operacion,float numero1){
+        Float res = 0f;
         switch (operacion){
-            case (6):
-                    return factorial(numero1);
-            case(7):
-                return (float)Math.sqrt((double)numero1);
+            case 7:
+                res = factorial(numero1);
+                break;
+            case 8:
+                res = (float)Math.sqrt((double)numero1);
+                break;
         }
-        return 0;
+        return res;
     }
     private float factorial(float numero1){
         if (numero1==0)
