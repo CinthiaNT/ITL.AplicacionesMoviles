@@ -17,9 +17,7 @@ public class MainActivity extends AppCompatActivity {
             btn_division, btn_masDecimales, btn_menosDecimales, btn_save,btn_negativo,btn_potencia,btn_factorial,
             btn_raizCuadrada,btn_porcentaje;
     private int operacion;
-    private float numero1;
-    private float numero2;
-    private float resultado;
+    private float numero1,numero2,resultado;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -126,7 +124,7 @@ public class MainActivity extends AppCompatActivity {
             case R.id.btn_division:
                 operacion = 4;
                 numero1 = Float.parseFloat(txt_pantalla.getText().toString());
-                txt_resultado.setText(txt_pantalla.getText()+"x");
+                txt_resultado.setText(txt_pantalla.getText()+"/");
                 txt_pantalla.setText("");
                 break;
             case R.id.btn_negativo:
@@ -157,7 +155,7 @@ public class MainActivity extends AppCompatActivity {
                 txt_pantalla.setText("");
                 break;
             case R.id.btn_eliminar:
-                alerta("Elimino el  ultimo caracter");
+                txt_pantalla.setText(eliminar(txt_pantalla.getText().toString()));
                 break;
             case R.id.btn_masDecimales:
                 alerta("Se agregaron decimales");
@@ -166,7 +164,7 @@ public class MainActivity extends AppCompatActivity {
                 alerta("Se eliminaron decimales");
                 break;
             case R.id.btn_save:
-                alerta("Se guardo el ultimo calculo");
+                txt_pantalla.setText(txt_pantalla.getText().toString() + resultado);
                 break;
         }
 
@@ -221,7 +219,9 @@ public class MainActivity extends AppCompatActivity {
         else
             return numero1 * factorial(numero1-1);
     }
-
+    private String eliminar(String cadena){
+        return cadena.substring(0, cadena.length() - 1);
+    }
 
 
 }

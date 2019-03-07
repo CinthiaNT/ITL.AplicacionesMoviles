@@ -39,7 +39,8 @@
                 android:id="@+id/btn_save"
                 android:layout_width="160dp"
                 android:layout_height="match_parent"
-                android:background="@color/save"
+                android:layout_weight="1"
+                android:background="@color/teclas"
                 android:onClick="onClick"
                 android:text="L O A D"
                 android:textSize="30sp" />
