@@ -12,10 +12,12 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
     }
+    Empleado empleado;
 
     public void activity2(View view){
+        empleado = new Empleado("Cinthia","Nava",21);
         Intent intent = new Intent(this, Main2Activity.class);
-        intent.putExtra("nombre","Cinthia");
+        intent.putExtra("empleado",empleado);
         startActivity(intent);
     }
 

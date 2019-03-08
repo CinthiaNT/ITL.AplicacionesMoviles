@@ -8,11 +8,13 @@ import android.widget.Toast;
 
 public class Main2Activity extends AppCompatActivity {
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
-        String nombre = getIntent().getExtras().getString("nombre");
+
+        String nombre = getIntent().getExtras().getString("empleado");
         Toast.makeText(this,nombre,Toast.LENGTH_LONG).show();
 
     }
