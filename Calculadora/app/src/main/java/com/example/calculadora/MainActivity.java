@@ -8,6 +8,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.text.DecimalFormat;
+
 public class MainActivity extends AppCompatActivity {
 
     private EditText txt_pantalla;
@@ -18,6 +20,9 @@ public class MainActivity extends AppCompatActivity {
             btn_raizCuadrada,btn_porcentaje;
     private int operacion;
     private float numero1,numero2,resultado;
+    private String cantidadDecimales = "#.####";
+    int cantidadDec=4;
+    DecimalFormat decimal;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -158,10 +163,24 @@ public class MainActivity extends AppCompatActivity {
                 txt_pantalla.setText(eliminar(txt_pantalla.getText().toString()));
                 break;
             case R.id.btn_masDecimales:
-                alerta("Se agregaron decimales");
+                if (cantidadDecimales.length()<12){
+                    cantidadDecimales = cantidadDecimales + "#";
+                    decimal = new DecimalFormat(cantidadDecimales);
+                    if(!txt_pantalla.getText().toString().equals("")){
+                        txt_pantalla.setText(decimal.format(Float.parseFloat(txt_pantalla.getText().toString())));
+                    }
+                    cantidadDec++;
+                }
                 break;
             case R.id.btn_menosDecimales:
-                alerta("Se eliminaron decimales");
+                if (cantidadDecimales.length()>2){
+                    cantidadDecimales = cantidadDecimales.substring(0, cantidadDecimales.length()-1);
+                    decimal = new DecimalFormat(cantidadDecimales);
+                    if(!txt_pantalla.getText().toString().equals("")){
+                        txt_pantalla.setText(decimal.format(Float.parseFloat(txt_pantalla.getText().toString())));
+                    }
+                    cantidadDec--;
+                }
                 break;
             case R.id.btn_save:
                 txt_pantalla.setText(txt_pantalla.getText().toString() + resultado);
