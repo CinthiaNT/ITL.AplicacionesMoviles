@@ -166,8 +166,8 @@ public class MainActivity extends AppCompatActivity {
                 if (cantidadDecimales.length()<12){
                     cantidadDecimales = cantidadDecimales + "#";
                     decimal = new DecimalFormat(cantidadDecimales);
-                    if(!txt_pantalla.getText().toString().equals("")){
-                        txt_pantalla.setText(decimal.format(Float.parseFloat(txt_pantalla.getText().toString())));
+                    if(!String.valueOf(resultado).equals("")){
+                        txt_pantalla.setText(decimal.format(String.valueOf(resultado)));
                     }
                     cantidadDec++;
                 }
@@ -176,8 +176,8 @@ public class MainActivity extends AppCompatActivity {
                 if (cantidadDecimales.length()>2){
                     cantidadDecimales = cantidadDecimales.substring(0, cantidadDecimales.length()-1);
                     decimal = new DecimalFormat(cantidadDecimales);
-                    if(!txt_pantalla.getText().toString().equals("")){
-                        txt_pantalla.setText(decimal.format(Float.parseFloat(txt_pantalla.getText().toString())));
+                    if(!String.valueOf(resultado).equals("")){
+                        txt_pantalla.setText(decimal.format(Float.parseFloat(String.valueOf(resultado))));
                     }
                     cantidadDec--;
                 }
