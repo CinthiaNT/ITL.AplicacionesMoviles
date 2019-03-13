@@ -125,6 +125,12 @@
                 android:layout_height="wrap_content"
                 android:onClick="enviarEmpleado"
                 android:text="Guardar" />
+
+            <Button
+                android:id="@+id/btnCancelar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Cancelar" />
         </TableRow>
 
 
