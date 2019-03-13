@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".FormularioEmpleado">
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <TextView
+                android:id="@+id/txtImagen"
+                android:layout_width="wrap_content"
+                android:layout_height="200dp"
+                android:layout_weight="1"
+                android:text="FOTO EMPLEADO" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <TextView
+                android:id="@+id/lblNombre"
+                android:layout_width="178dp"
+                android:layout_height="wrap_content"
+                android:text="Nombre"
+                android:textSize="20sp" />
+
+            <EditText
+                android:id="@+id/txtNombre"
+                android:layout_width="241dp"
+                android:layout_height="wrap_content"
+
+                android:inputType="textPersonName" />
+        </TableRow>
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <TextView
+                android:id="@+id/lblApellidoP"
+                android:layout_width="178dp"
+                android:layout_height="wrap_content"
+                android:text="Apellido Paterno"
+                android:textSize="20sp" />
+
+            <EditText
+                android:id="@+id/txtApellidoP"
+                android:layout_width="241dp"
+                android:layout_height="wrap_content"
+
+                android:inputType="textPersonName"
+                />
+        </TableRow>
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <TextView
+                android:id="@+id/lblApellidoM"
+                android:layout_width="178dp"
+                android:layout_height="wrap_content"
+                android:text="Apellido Materno"
+                android:textSize="20sp" />
+
+            <EditText
+                android:id="@+id/txtApellidoM"
+                android:layout_width="241dp"
+                android:layout_height="wrap_content"
+
+                android:inputType="textPersonName"
+                />
+        </TableRow>
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <TextView
+                android:id="@+id/lblNomina"
+                android:layout_width="178dp"
+                android:layout_height="wrap_content"
+                android:text="No. Nomina"
+                android:textSize="20sp" />
+
+            <EditText
+                android:id="@+id/txtNomina"
+                android:layout_width="241dp"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                />
+        </TableRow>
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <TextView
+                android:id="@+id/lblTelefono"
+                android:layout_width="178dp"
+                android:layout_height="wrap_content"
+                android:text="Telefono"
+                android:textSize="20sp" />
+
+            <EditText
+                android:id="@+id/txtTelefono"
+                android:layout_width="241dp"
+                android:layout_height="wrap_content"
+                android:inputType="phone"
+                />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <Button
+                android:id="@+id/btnGuardar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="enviarEmpleado"
+                android:text="Guardar" />
+        </TableRow>
+
+
+    </TableLayout>
+
+
+</android.support.constraint.ConstraintLayout>
