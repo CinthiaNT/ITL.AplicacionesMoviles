@@ -12,13 +12,10 @@ import android.widget.Toast;
 import java.util.ArrayList;
 
 public class FormularioEmpleado extends AppCompatActivity {
-    private ArrayList<Empleado> listaEmpleado;
-
     private EditText txtNombre,txtApellidoP,txtApellidoM,txtNomina,txtTelefono;
     private Button btnGuardar, btnCancelar;
     private Intent main;
-
-
+    private ArrayList<Empleado> listaEmpleado;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,8 +30,6 @@ public class FormularioEmpleado extends AppCompatActivity {
 
         btnGuardar = (Button)findViewById(R.id.btnGuardar);
         btnCancelar = (Button)findViewById(R.id.btnCancelar);
-
-        main = new Intent(this,MainActivity.class);
 
         if(getIntent().hasExtra("listaEmpleado")){
             listaEmpleado = (ArrayList<Empleado>)
@@ -54,9 +49,11 @@ public class FormularioEmpleado extends AppCompatActivity {
                               Integer.valueOf(txtNomina.getText().toString().trim()),
                               txtTelefono.getText().toString().trim()
                               ));
-            main.putExtra("listaEmpledo", this.listaEmpleado);
-            startActivity(main);
+
         }
+        main = new Intent(this,MainActivity.class);
+       main.putExtra("listaEmpledo", this.listaEmpleado);
+       startActivity(main);
 
     }
     public void cancelar (View view){
