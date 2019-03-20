@@ -29,8 +29,7 @@ public class MainActivity extends AppCompatActivity {
         if(getIntent().hasExtra("listaEmpleado")){
         Log.e("Archivo", "Aquiiiiiiii"+String.valueOf(listaEmpleado.size()));
 
-          listaEmpleado = (ArrayList<Empleado>)
-                            getIntent().getExtras().getSerializable("listaEmpleado");
+          listaEmpleado = (ArrayList<Empleado>) getIntent().getExtras().getSerializable("listaEmpleado");
         }
         this.muestraPersonas();
     }
