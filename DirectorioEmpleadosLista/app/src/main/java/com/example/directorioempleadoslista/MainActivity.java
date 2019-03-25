@@ -33,13 +33,32 @@ public class MainActivity extends AppCompatActivity {
         }
         this.muestraPersonas();
     }
+
+
+    /**
+    * Descripción: Funcion que nos ayuda a cambiar de Activity.
+    *              Se inicializa un Intent con el nombre del Activity al que se hace referencia
+    *              y se envia al nuevo Activity una lista de empleados
+    * @author Cinthia Nava
+    * @version agregarEmpleado version1
+    * @param View
+    *
+    */
     public void agregarEmpleado(View view){
         Intent intent = new Intent(this, FormularioEmpleado.class);
         Log.e("Archivo", String.valueOf(listaEmpleado.size()));
         intent.putExtra("listaEmpleado",this.listaEmpleado);
         startActivity(intent);
    }
-
+    /*
+    * @author Cinthia Nava
+    * @version muestraPersonas version1
+    * @param No recibe parámetros
+    * Descripcion Función para imprimir la lista de empleados.
+    *             Se valida que la lista de empleados no este vacía, si es el caso no se muestra nada
+    *             de lo contrario se recorre la lista de empleados y por cada empleado se imprime
+    *             su
+    */
     private void muestraPersonas(){
         //TODO1: Validar si hay personas registradas
         String cadena = "NO HAY PERSONAS REGISTRADAS";
