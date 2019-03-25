@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:title="Inicio"
+        android:id="@+id/item_inicio"
+        android:icon="@drawable/ic_stat_name"
+        />
+    <item
+        android:title="Camara"
+        android:id="@+id/item_camara"
+        android:icon="@drawable/ic_stat_cam"
+        />
+    <item
+        android:title="Perfil"
+        android:id="@+id/item_perfil"
+        android:icon="@drawable/ic_stat_perfil"
+        />
+
+</menu>
