@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Directorioapp</string>
+    <string name="empleado_nombre">Nombre</string>
+    <string name="empleado_apellido_p">ApellidoP</string>
+    <string name="empleado_apellido_m">ApellidoM</string>
+    <string name="empleado_no_nomina">Nomina</string>
+    <string name="empleado_titulo">Empleado:</string>
+    <string name="empleado_subtitulo">No. Nomina:</string>
 </resources>
