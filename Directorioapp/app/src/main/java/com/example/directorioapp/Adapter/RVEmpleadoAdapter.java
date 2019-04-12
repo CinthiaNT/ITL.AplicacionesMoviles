@@ -46,7 +46,7 @@ public class RVEmpleadoAdapter extends RecyclerView.Adapter<RVEmpleadoAdapter.RV
         rvEmpleadoAdapterViewHolder.textViewName.setText(empleado.getNombre());
         rvEmpleadoAdapterViewHolder.textViewApellidoP.setText(empleado.getApellido_p());
         rvEmpleadoAdapterViewHolder.textViewApellidoM.setText(empleado.getApellido_m());
-        rvEmpleadoAdapterViewHolder.textViewNomina.setText(empleado.getNo_nomnina());
+        rvEmpleadoAdapterViewHolder.textViewNomina.setText(String.valueOf(empleado.getNo_nomnina()));
 
         //Asignamos a ese item en particular un listener para cuando el usuario haga click en el
         rvEmpleadoAdapterViewHolder.itemView.setOnClickListener(new View.OnClickListener() {
@@ -55,7 +55,7 @@ public class RVEmpleadoAdapter extends RecyclerView.Adapter<RVEmpleadoAdapter.RV
             public void onClick(View v) {
                 AlertDialog.Builder alertDialog = new AlertDialog.Builder(context);
                 alertDialog.setTitle(empleado.getNombre());
-                alertDialog.setMessage(empleado.getNo_nomnina());
+                //alertDialog.setMessage(String.valueOf(empleado.getNo_nomnina()));
                 alertDialog.setPositiveButton("Aceptar", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
