@@ -221,16 +221,16 @@
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="43dp"
                 android:orientation="horizontal">
 
                 <EditText
                     android:id="@+id/txtPuesto"
                     android:layout_width="250dp"
                     android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
                     android:layout_weight="1"
-                    android:hint="Puesto"
-                    android:layout_centerInParent="true"/>
+                    android:hint="Puesto" />
             </RelativeLayout>
 
             <RelativeLayout
@@ -293,11 +293,25 @@
 
                 <Button
                     android:id="@+id/btnAgegar"
-                    android:layout_width="250dp"
+                    android:layout_width="120dp"
                     android:layout_height="wrap_content"
-                    android:layout_centerInParent="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginEnd="210dp"
+                    android:layout_marginRight="210dp"
                     android:onClick="onClick"
                     android:text="Agregar" />
+
+                <Button
+                    android:id="@+id/btnModificar"
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginEnd="81dp"
+                    android:layout_marginRight="81dp"
+                    android:onClick="onClick"
+                    android:text="Modificar" />
             </RelativeLayout>
         </LinearLayout>
     </ScrollView>

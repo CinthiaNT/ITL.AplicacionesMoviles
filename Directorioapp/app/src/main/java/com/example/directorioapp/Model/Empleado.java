@@ -25,6 +25,35 @@ public class Empleado implements Serializable {
    public Empleado(){
 
    }
+    public Empleado(String nombre,String apellido_p,String apellido_m,String no_nomnina){
+        this.nombre = nombre;
+        this.apellido_p = apellido_p;
+        this.apellido_m = apellido_m;
+        this.no_nomnina = no_nomnina;
+    }
+    public Empleado(String nombre, String apellido_p, String apellido_m, String telefono, String fecha_nacimiento, String correo, String direccion, String estado_civil,String no_nomnina) {
+        this.nombre = nombre;
+        this.apellido_p = apellido_p;
+        this.apellido_m = apellido_m;
+        this.telefono = telefono;
+        this.fecha_nacimiento = fecha_nacimiento;
+        this.correo = correo;
+        this.direccion = direccion;
+        this.estado_civil = estado_civil;
+        this.no_nomnina = no_nomnina;
+    }
+    public Empleado(String no_nomnina, String curp, String rfc, String nss, String area, String puesto, String escolaridad, String enfermedades_cronicas, String contacto_emergencia, String estatus) {
+        this.no_nomnina = no_nomnina;
+        this.curp = curp;
+        this.rfc = rfc;
+        this.nss = nss;
+        this.area = area;
+        this.puesto = puesto;
+        this.escolaridad = escolaridad;
+        this.enfermedades_cronicas = enfermedades_cronicas;
+        this.contacto_emergencia = contacto_emergencia;
+        this.estatus = estatus;
+    }
 
     public Empleado(String nombre, String apellido_p, String apellido_m, String telefono, String fecha_nacimiento, String correo, String direccion, String estado_civil, String no_nomnina, String curp, String rfc, String nss, String area, String puesto, String escolaridad, String enfermedades_cronicas, String contacto_emergencia, String estatus) {
         this.nombre = nombre;

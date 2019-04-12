@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="match_parent">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_alignParentBottom="false"
         android:orientation="vertical">
 
         <LinearLayout
@@ -17,7 +20,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:paddingRight="8dp"
-                android:text="@string/empleado_titulo" />
+                android:text="@string/empleado_titulo"
+                android:textColor="@color/blanco"
+                android:textSize="15sp" />
 
             <TextView
                 android:id="@+id/lbl_empleado_nombre"
@@ -25,7 +30,8 @@
                 android:layout_height="wrap_content"
                 android:paddingRight="20dp"
                 android:text="@string/empleado_nombre"
-                android:textSize="20sp"
+                android:textColor="@color/blanco"
+                android:textSize="15sp"
                 android:textStyle="bold" />
 
             <TextView
@@ -34,7 +40,8 @@
                 android:layout_height="wrap_content"
                 android:paddingRight="20dp"
                 android:text="@string/empleado_apellido_p"
-                android:textSize="20sp"
+                android:textColor="@color/blanco"
+                android:textSize="15sp"
                 android:textStyle="bold" />
 
             <TextView
@@ -43,7 +50,8 @@
                 android:layout_height="wrap_content"
                 android:paddingRight="20dp"
                 android:text="@string/empleado_apellido_m"
-                android:textSize="20sp"
+                android:textColor="@color/blanco"
+                android:textSize="15sp"
                 android:textStyle="bold" />
         </LinearLayout>
 
@@ -56,15 +64,28 @@
                 android:id="@+id/lblSubtitulo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/empleado_subtitulo" />
+                android:text="@string/empleado_subtitulo"
+                android:textColor="@color/blanco"
+                android:textSize="15sp" />
 
             <TextView
                 android:id="@+id/lbl_empleado_nomina"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/empleado_no_nomina"
-                android:textSize="20sp"
+                android:textColor="@color/blanco"
+                android:textSize="15sp"
                 android:textStyle="bold" />
+
         </LinearLayout>
+
+        <View
+            android:id="@+id/divider"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@color/blanco" />
+
     </LinearLayout>
+
+
 </RelativeLayout>

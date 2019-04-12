@@ -3,13 +3,16 @@ package com.example.directorioapp.Adapter;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.example.directorioapp.Fragment_InformacionPersonal;
 import com.example.directorioapp.Model.Empleado;
 
 import com.example.directorioapp.R;
@@ -55,7 +58,7 @@ public class RVEmpleadoAdapter extends RecyclerView.Adapter<RVEmpleadoAdapter.RV
             public void onClick(View v) {
                 AlertDialog.Builder alertDialog = new AlertDialog.Builder(context);
                 alertDialog.setTitle(empleado.getNombre());
-                //alertDialog.setMessage(String.valueOf(empleado.getNo_nomnina()));
+                alertDialog.setMessage(String.valueOf(empleado.getNo_nomnina()));
                 alertDialog.setPositiveButton("Aceptar", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
@@ -64,8 +67,13 @@ public class RVEmpleadoAdapter extends RecyclerView.Adapter<RVEmpleadoAdapter.RV
                 });
 
                 alertDialog.show();
+                final Intent intent = new Intent(context, Fragment_InformacionPersonal.class);
+                intent.putExtra("id",empleado.getNo_nomnina());
+                context.startActivity(intent);
             }
         });
+
+
     }
 
     //Retornamos el tamaño de la lista
