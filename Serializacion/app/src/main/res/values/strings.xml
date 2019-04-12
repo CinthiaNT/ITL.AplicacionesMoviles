@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Serializacion</string>
+    <string name="usuario">Nombre de usuario</string>
+    <string name="correo">Correo electronico</string>
+    <string name="estadoCivil">Estado Civil</string>
+    <string name="escolaridad">Escolaridad</string>
 </resources>

@@ -52,8 +52,8 @@ public class FormularioEmpleado extends AppCompatActivity {
 
         }
         main = new Intent(this,MainActivity.class);
-       main.putExtra("listaEmpledo", this.listaEmpleado);
-       startActivity(main);
+        main.putExtra("listaEmpledo", this.listaEmpleado);
+        startActivity(main);
 
     }
     public void cancelar (View view){
