@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Automoviles</string>
+    <string name="app_titulo">Nissan León</string>
+    <string name="app_id">Id</string>
+    <string name="app_marca">Marca</string>
+    <string name="app_modelo">Modelo</string>
+    <string name="app_color">Color</string>
+    <string name="app_carroceria">Carroceria</string>
+    <string name="app_search">Search</string>
+    <string name="app_create">Create</string>
+    <string name="app_update">Update</string>
+    <string name="app_delete">Delete</string>
+</resources>
